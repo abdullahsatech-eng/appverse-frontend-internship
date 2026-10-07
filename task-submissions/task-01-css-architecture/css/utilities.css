@@ -1,0 +1,91 @@
+/* ================================
+   UTILITIES.CSS
+   ================================ */
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.gap-xs {
+  gap: var(--space-2);
+}
+
+.gap-sm {
+  gap: var(--space-3);
+}
+
+.gap-md {
+  gap: var(--space-4);
+}
+
+.gap-lg {
+  gap: var(--space-6);
+}
+
+.mt-sm {
+  margin-top: var(--space-3);
+}
+
+.mt-md {
+  margin-top: var(--space-4);
+}
+
+.mt-lg {
+  margin-top: var(--space-6);
+}
+
+.mb-sm {
+  margin-bottom: var(--space-3);
+}
+
+.mb-md {
+  margin-bottom: var(--space-4);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-6);
+}
+
+.p-sm {
+  padding: var(--space-3);
+}
+
+.p-md {
+  padding: var(--space-4);
+}
+
+.p-lg {
+  padding: var(--space-6);
+}

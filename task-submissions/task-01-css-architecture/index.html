@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Production CSS Architecture and Design Token System">
+  <title>CSS Architecture System | Abdullah Khan</title>
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+
+    <div class="sidebar__brand">
+      <div class="brand-logo">AK</div>
+
+      <div class="brand-copy">
+        <strong>Atlas UI</strong>
+        <span>CSS Architecture</span>
+      </div>
+    </div>
+
+    <div class="sidebar__section">
+      <span class="sidebar__label">WORKSPACE</span>
+
+      <nav class="sidebar__nav">
+
+        <a href="#overview" class="nav-link nav-link--active">
+          <span class="nav-link__icon">⌂</span>
+          <span>Overview</span>
+        </a>
+
+        <a href="#bem" class="nav-link">
+          <span class="nav-link__icon">▣</span>
+          <span>BEM Components</span>
+        </a>
+
+        <a href="#tokens" class="nav-link">
+          <span class="nav-link__icon">◈</span>
+          <span>Design Tokens</span>
+        </a>
+
+        <a href="#utilities" class="nav-link">
+          <span class="nav-link__icon">◌</span>
+          <span>Utilities</span>
+        </a>
+
+        <a href="#architecture" class="nav-link">
+          <span class="nav-link__icon">⌘</span>
+          <span>Architecture</span>
+        </a>
+
+      </nav>
+    </div>
+
+    <div class="sidebar__section">
+      <span class="sidebar__label">SYSTEM</span>
+
+      <div class="system-status">
+        <span class="system-status__dot"></span>
+        <div>
+          <strong>All systems ready</strong>
+          <span>Architecture v1.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <div class="avatar">AK</div>
+
+        <div>
+          <strong>Abdullah Khan</strong>
+          <span>Frontend Intern</span>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+
+  <main class="main">
+
+    <header class="topbar">
+
+      <div class="topbar__left">
+
+        <button class="menu-button" aria-label="Open menu">
+          ☰
+        </button>
+
+        <div>
+          <span class="breadcrumb">Frontend / Phase 01 / CSS Architecture</span>
+          <h1>Architecture Workspace</h1>
+        </div>
+
+      </div>
+
+      <div class="topbar__right">
+
+        <div class="status-badge">
+          <span></span>
+          Production Ready
+        </div>
+
+        <div class="date-chip">
+          07 Oct 2026
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <div class="content">
+
+
+      <!-- HERO -->
+
+      <section id="overview" class="hero">
+
+        <div class="hero__main">
+
+          <div class="hero__eyebrow">
+            <span class="hero__eyebrow-dot"></span>
+            CSS ARCHITECTURE SYSTEM
+          </div>
+
+          <h2>
+            CSS that scales
+            <span>with the product.</span>
+          </h2>
+
+          <p>
+            A production-minded architecture built around BEM,
+            utility-first principles, design tokens and clear
+            component boundaries.
+          </p>
+
+          <div class="hero__actions">
+
+            <a href="#bem" class="button button--primary">
+              Explore components
+              <span>→</span>
+            </a>
+
+            <a href="#tokens" class="button button--secondary">
+              View design system
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="architecture-map">
+
+          <div class="architecture-map__header">
+            <span>ARCHITECTURE MAP</span>
+            <span class="live-indicator">LIVE</span>
+          </div>
+
+          <div class="architecture-map__body">
+
+            <div class="map-layer map-layer--component">
+              <div class="map-layer__number">04</div>
+              <div>
+                <strong>Components</strong>
+                <span>Reusable UI patterns</span>
+              </div>
+            </div>
+
+            <div class="map-connector"></div>
+
+            <div class="map-layer map-layer--utility">
+              <div class="map-layer__number">03</div>
+              <div>
+                <strong>Utilities</strong>
+                <span>Single-purpose helpers</span>
+              </div>
+            </div>
+
+            <div class="map-connector"></div>
+
+            <div class="map-layer map-layer--base">
+              <div class="map-layer__number">02</div>
+              <div>
+                <strong>Base</strong>
+                <span>Foundation & layout</span>
+              </div>
+            </div>
+
+            <div class="map-connector"></div>
+
+            <div class="map-layer map-layer--token">
+              <div class="map-layer__number">01</div>
+              <div>
+                <strong>Design Tokens</strong>
+                <span>Color · Type · Space</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- METRICS -->
+
+      <section class="metrics">
+
+        <article class="metric-card">
+          <span class="metric-card__icon metric-card__icon--blue">◆</span>
+          <div>
+            <span class="metric-card__label">Architecture layers</span>
+            <strong>04</strong>
+            <small>Clear separation</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-card__icon metric-card__icon--violet">B</span>
+          <div>
+            <span class="metric-card__label">Naming methodology</span>
+            <strong>BEM</strong>
+            <small>Block · Element · Modifier</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-card__icon metric-card__icon--green">↗</span>
+          <div>
+            <span class="metric-card__label">Responsive system</span>
+            <strong>100%</strong>
+            <small>Adaptive layouts</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-card__icon metric-card__icon--orange">0</span>
+          <div>
+            <span class="metric-card__label">Framework dependencies</span>
+            <strong>0</strong>
+            <small>Vanilla HTML + CSS</small>
+          </div>
+        </article>
+
+      </section>
+
+
+      <!-- BEM -->
+
+      <section id="bem" class="section">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="section-heading__eyebrow">02 / COMPONENT ARCHITECTURE</span>
+            <h2>BEM component system</h2>
+          </div>
+
+          <p>
+            Predictable naming keeps components isolated,
+            reusable and easier to maintain.
+          </p>
+
+        </div>
+
+
+        <div class="bem-grid">
+
+
+          <article class="showcase-card">
+
+            <div class="showcase-card__visual showcase-card__visual--blue">
+
+              <div class="visual-label">BLOCK</div>
+
+              <div class="visual-symbol">
+                <span>01</span>
+              </div>
+
+              <div class="visual-grid"></div>
+
+            </div>
+
+            <div class="showcase-card__body">
+
+              <div class="component-header">
+
+                <code>.product-card</code>
+
+                <span class="tag tag--green">STABLE</span>
+
+              </div>
+
+              <h3>Independent Block</h3>
+
+              <p>
+                A block represents an independent component
+                that can be reused anywhere in the interface.
+              </p>
+
+              <div class="component-example">
+                <span>Block</span>
+                <code>.product-card</code>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="showcase-card showcase-card--featured">
+
+            <div class="showcase-card__visual showcase-card__visual--violet">
+
+              <div class="visual-label">ELEMENT</div>
+
+              <div class="visual-symbol">
+                <span>02</span>
+              </div>
+
+              <div class="visual-grid"></div>
+
+            </div>
+
+            <div class="showcase-card__body">
+
+              <div class="component-header">
+
+                <code>.product-card__title</code>
+
+                <span class="tag tag--blue">CORE</span>
+
+              </div>
+
+              <h3>Scoped Elements</h3>
+
+              <p>
+                Elements belong to a block and communicate
+                their relationship through predictable names.
+              </p>
+
+              <div class="component-example">
+                <span>Element</span>
+                <code>.product-card__title</code>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="showcase-card">
+
+            <div class="showcase-card__visual showcase-card__visual--orange">
+
+              <div class="visual-label">MODIFIER</div>
+
+              <div class="visual-symbol">
+                <span>03</span>
+              </div>
+
+              <div class="visual-grid"></div>
+
+            </div>
+
+            <div class="showcase-card__body">
+
+              <div class="component-header">
+
+                <code>.product-card--featured</code>
+
+                <span class="tag tag--orange">VARIANT</span>
+
+              </div>
+
+              <h3>Controlled Variations</h3>
+
+              <p>
+                Modifiers create predictable visual or behavioral
+                variations without duplicating the component.
+              </p>
+
+              <div class="component-example">
+                <span>Modifier</span>
+                <code>.product-card--featured</code>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- TOKENS -->
+
+      <section id="tokens" class="section section--dark">
+
+        <div class="section-heading section-heading--light">
+
+          <div>
+            <span class="section-heading__eyebrow">03 / DESIGN SYSTEM</span>
+            <h2>Design tokens</h2>
+          </div>
+
+          <p>
+            One source of truth for the visual language
+            of the entire product.
+          </p>
+
+        </div>
+
+
+        <div class="token-grid">
+
+
+          <article class="token-card">
+
+            <div class="token-card__top">
+
+              <div class="token-icon token-icon--blue">●</div>
+
+              <div>
+                <strong>Color</strong>
+                <span>Visual identity</span>
+              </div>
+
+            </div>
+
+            <code>--color-primary</code>
+
+            <div class="color-scale">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <small>5 semantic color levels</small>
+
+          </article>
+
+
+          <article class="token-card">
+
+            <div class="token-card__top">
+
+              <div class="token-icon token-icon--green">↕</div>
+
+              <div>
+                <strong>Spacing</strong>
+                <span>Consistent rhythm</span>
+              </div>
+
+            </div>
+
+            <code>--space-4</code>
+
+            <div class="spacing-scale">
+              <span style="width:8px"></span>
+              <span style="width:16px"></span>
+              <span style="width:24px"></span>
+              <span style="width:32px"></span>
+              <span style="width:48px"></span>
+            </div>
+
+            <small>8px spacing scale</small>
+
+          </article>
+
+
+          <article class="token-card">
+
+            <div class="token-card__top">
+
+              <div class="token-icon token-icon--violet">Aa</div>
+
+              <div>
+                <strong>Typography</strong>
+                <span>Type hierarchy</span>
+              </div>
+
+            </div>
+
+            <code>--text-lg</code>
+
+            <div class="type-preview">
+              <strong>Aa</strong>
+              <span>Heading / Body / Caption</span>
+            </div>
+
+            <small>Semantic type scale</small>
+
+          </article>
+
+
+          <article class="token-card">
+
+            <div class="token-card__top">
+
+              <div class="token-icon token-icon--orange">◒</div>
+
+              <div>
+                <strong>Elevation</strong>
+                <span>Depth & hierarchy</span>
+              </div>
+
+            </div>
+
+            <code>--shadow-md</code>
+
+            <div class="shadow-preview"></div>
+
+            <small>Reusable elevation levels</small>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- UTILITIES -->
+
+      <section id="utilities" class="section">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="section-heading__eyebrow">04 / UTILITY-FIRST</span>
+            <h2>Composable utilities</h2>
+          </div>
+
+          <p>
+            Small, single-purpose classes handle layout
+            without creating unnecessary components.
+          </p>
+
+        </div>
+
+
+        <div class="utility-layout">
+
+
+          <div class="code-window">
+
+            <div class="code-window__header">
+
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <span>utilities.css</span>
+
+            </div>
+
+            <pre><code>.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-md {
+  gap: var(--space-4);
+}
+
+.text-center {
+  text-align: center;
+}</code></pre>
+
+          </div>
+
+
+          <div class="utility-preview">
+
+            <div class="preview-header">
+              <span class="tag tag--green">LIVE COMPOSITION</span>
+              <span>Rendered output</span>
+            </div>
+
+
+            <div class="preview-row">
+
+              <div class="preview-avatar">A</div>
+
+              <div class="preview-copy">
+                <strong>Utility composition</strong>
+                <span>Single-purpose classes</span>
+              </div>
+
+              <span class="status status--green">
+                Ready
+              </span>
+
+            </div>
+
+
+            <div class="preview-row">
+
+              <div class="preview-avatar preview-avatar--dark">
+                CSS
+              </div>
+
+              <div class="preview-copy">
+                <strong>Low specificity</strong>
+                <span>Easy to reason about</span>
+              </div>
+
+              <span class="status status--blue">
+                Clean
+              </span>
+
+            </div>
+
+
+            <div class="preview-row">
+
+              <div class="preview-avatar preview-avatar--violet">
+                UI
+              </div>
+
+              <div class="preview-copy">
+                <strong>Composable layout</strong>
+                <span>Reusable patterns</span>
+              </div>
+
+              <span class="status status--violet">
+                Scalable
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ARCHITECTURE -->
+
+      <section id="architecture" class="architecture">
+
+        <div class="architecture__content">
+
+          <span class="section-heading__eyebrow">
+            ARCHITECTURE DECISION
+          </span>
+
+          <h2>
+            Separate responsibilities.
+            <span>Reduce complexity.</span>
+          </h2>
+
+          <p>
+            Tokens control values. Base styles establish foundations.
+            Utilities handle composition. Components own reusable
+            interface behavior.
+          </p>
+
+        </div>
+
+
+        <div class="architecture__stack">
+
+          <div>
+            <span>04</span>
+            components.css
+          </div>
+
+          <div>
+            <span>03</span>
+            utilities.css
+          </div>
+
+          <div>
+            <span>02</span>
+            base.css
+          </div>
+
+          <div>
+            <span>01</span>
+            tokens.css
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <footer class="footer">
+
+        <div>
+          <strong>Atlas UI</strong>
+          <span>CSS Architecture Lab</span>
+        </div>
+
+        <div>
+          <span>Abdullah Khan</span>
+          <span>OCT26-FE06-08</span>
+          <span>07 October 2026</span>
+        </div>
+
+      </footer>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
