@@ -1,0 +1,59 @@
+/* ==========================================================================
+   animations.css — smooth scrolling and load-in motion.
+   Everything here sits inside prefers-reduced-motion: no-preference, so
+   visitors who ask for less motion get a static page. Because the
+   keyframes only describe the starting state ("backwards" fill), content
+   is fully visible whenever an animation does not run.
+   ========================================================================== */
+
+/* Registered so the ring can animate its fill smoothly (top level: @property
+   cannot be nested). It has no effect unless an animation uses it. */
+@property --ring-value {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem) scale(0.985);
+    }
+  }
+
+  @keyframes ring-fill {
+    from {
+      --ring-value: 0;
+    }
+  }
+
+  .anim-rise {
+    animation: rise-in var(--duration-slow) var(--ease-out) backwards;
+  }
+
+  .hero__copy > .anim-rise:nth-child(2) { animation-delay: 80ms; }
+  .hero__copy > .anim-rise:nth-child(3) { animation-delay: 160ms; }
+  .hero__copy > .anim-rise:nth-child(4) { animation-delay: 240ms; }
+  .hero__copy > .anim-rise:nth-child(5) { animation-delay: 320ms; }
+
+  .anim-fade {
+    animation: fade-in var(--duration-slow) var(--ease-out) 200ms backwards;
+  }
+
+  .hero__visual .ring {
+    animation: ring-fill 1.2s var(--ease-out) 500ms backwards;
+  }
+}

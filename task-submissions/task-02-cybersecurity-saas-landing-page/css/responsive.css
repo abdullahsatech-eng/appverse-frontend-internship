@@ -1,0 +1,70 @@
+/* ==========================================================================
+   responsive.css — mobile-first enhancements. Base styles already work at
+   320px; each query below only adds what a wider viewport can afford.
+   Breakpoints are chosen from content needs, not device names:
+     30rem (480px)  two-column footer / actions sit side by side
+     48rem (768px)  multi-column step lists and footer
+     62rem (992px)  desktop navigation and two-column hero
+   ========================================================================== */
+
+@media (min-width: 30rem) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 48rem) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1.6fr 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+}
+
+@media (min-width: 62rem) {
+  /* Desktop navigation: the checkbox and its label are no longer needed. */
+  .nav-toggle,
+  .nav-toggle__label {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+
+  .site-nav__list {
+    display: flex;
+    gap: var(--space-1);
+  }
+
+  .site-nav__link {
+    padding-inline: var(--space-3);
+    font-size: var(--text-sm);
+  }
+
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+}

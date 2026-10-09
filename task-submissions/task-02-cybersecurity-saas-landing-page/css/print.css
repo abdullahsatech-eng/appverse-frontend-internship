@@ -1,0 +1,205 @@
+/* ==========================================================================
+   print.css — loaded with media="print". Produces a clean, ink-friendly,
+   paper-readable version of the page.
+   ========================================================================== */
+
+@page {
+  margin: 1.8cm;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-border: #bbbbbb;
+  --color-border-strong: #888888;
+  --color-text: #111111;
+  --color-text-muted: #333333;
+  --color-text-on-accent: #111111;
+  --color-accent: #0a6b2d;
+  --color-accent-strong: #0a6b2d;
+  --color-accent-soft: #ffffff;
+  --color-warning: #8a5a00;
+  --color-danger: #a02020;
+  --color-info: #1b4f91;
+  --color-track: #dddddd;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-glow: none;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #111111;
+  font-size: 11pt;
+  line-height: 1.45;
+  overflow: visible;
+}
+
+/* Hide everything that is interactive-only or purely decorative. */
+.skip-link,
+.nav-toggle,
+.nav-toggle__label,
+.site-nav,
+.hero__visual,
+.hero__actions,
+.cta-panel__actions .button--secondary,
+.dash__dots,
+.plan__cta {
+  display: none;
+}
+
+.site-header {
+  position: static;
+  background: none;
+  backdrop-filter: none;
+  border: 0;
+}
+
+.site-header__bar {
+  min-height: 0;
+  padding-bottom: 0.5cm;
+}
+
+.hero,
+.section,
+.section--alt,
+.cta-panel,
+.dash,
+.panel,
+.plan--featured {
+  background: none;
+  box-shadow: none;
+}
+
+.hero {
+  padding-block: 0.5cm 1cm;
+}
+
+.section {
+  padding-block: 0.8cm;
+}
+
+.section__header {
+  margin-bottom: 0.6cm;
+}
+
+h1 { font-size: 24pt; }
+h2 { font-size: 17pt; }
+h3 { font-size: 12.5pt; }
+
+h1,
+h2,
+h3 {
+  break-after: avoid;
+}
+
+.section__header {
+  display: block;
+  break-after: avoid;
+}
+
+.section__header > * + * {
+  margin-top: 0.25cm;
+}
+
+.card-grid,
+.steps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5cm;
+}
+
+.dash__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel--areas,
+.panel--progress {
+  grid-column: span 2;
+}
+
+/* Keep each card and answer together on one page. */
+.feature,
+.case,
+.plan,
+.step,
+.panel,
+.faq__item,
+.trust-item,
+.callout {
+  break-inside: avoid;
+}
+
+/* Show the answers of closed FAQ items on paper (supported browsers). */
+@supports selector(::details-content) {
+  .faq__item::details-content {
+    content-visibility: visible;
+    display: block;
+  }
+}
+
+.faq__question::after {
+  display: none;
+}
+
+/* Reveal destinations of external links so the printout stays useful. */
+a[href^="http"]::after {
+  content: " (" attr(href) ")";
+  font-size: 9pt;
+  word-break: break-all;
+}
+
+a {
+  color: #111111;
+  text-decoration: underline;
+}
+
+.site-footer {
+  padding-block: 0.6cm 0;
+  border-top: 1px solid #888888;
+}
+
+.footer-list a::after {
+  content: none;
+}
+
+.site-footer__grid {
+  grid-template-columns: 1.6fr 1fr 1fr;
+}
+
+nav[aria-label="Footer"] {
+  display: none;
+}
+
+/* Paper must never show an animation's starting frame. */
+.anim-rise,
+.anim-fade,
+.hero__visual .ring {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* Keep progress graphics visible even when "background graphics" is off. */
+.meter,
+.meter__fill,
+.ring,
+.ring__inner,
+.trend__bar,
+.check__mark,
+.step__number {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.step__number {
+  color: #ffffff;
+  background-color: #0a6b2d;
+}
+
+.site-footer__grid {
+  grid-template-columns: 1.4fr 1fr;
+}

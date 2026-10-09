@@ -1,0 +1,128 @@
+/* ==========================================================================
+   layout.css — containers, sections, and grid/flex scaffolding.
+   ========================================================================== */
+
+.container {
+  width: min(100% - 2 * var(--space-gutter), var(--container-max));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(100% - 2 * var(--space-gutter), var(--container-narrow));
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+.section--alt {
+  background-color: var(--color-bg-alt);
+  border-block: var(--border-thin);
+}
+
+.section__header {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+}
+
+.section__header--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section__lead {
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+}
+
+/* Auto-fitting card grid: columns appear only when there is room. */
+.card-grid {
+  display: grid;
+  gap: var(--space-gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+.card-grid--quad {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Site header ------------------------------------------------------------ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: rgb(11 18 32 / 0.94);
+  border-bottom: var(--border-thin);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .site-header {
+    background-color: rgb(11 18 32 / 0.8);
+    backdrop-filter: blur(14px);
+  }
+}
+
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--header-height);
+}
+
+/* Hero ------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  padding-block: clamp(2.5rem, 1.5rem + 5vw, 6rem) var(--space-section);
+  background:
+    radial-gradient(60rem 28rem at 85% -10%, rgb(139 233 164 / 0.1), transparent 70%),
+    radial-gradient(48rem 24rem at -10% 20%, rgb(60 110 190 / 0.16), transparent 70%),
+    var(--color-bg);
+}
+
+.hero__grid {
+  display: grid;
+  gap: clamp(2.5rem, 2rem + 3vw, 4rem);
+  align-items: center;
+}
+
+/* Footer ----------------------------------------------------------------- */
+
+.site-footer {
+  padding-block: var(--space-7) var(--space-5);
+  background-color: var(--color-bg-alt);
+  border-top: var(--border-thin);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: var(--border-thin);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}

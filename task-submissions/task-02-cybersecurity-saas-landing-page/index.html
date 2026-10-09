@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReadySignal | Clearer Security. Smarter Decisions. (Concept)</title>
+  <meta name="description" content="ReadySignal is a concept SaaS landing page that shows how small businesses could understand their cybersecurity readiness and organise their next improvements.">
+  <meta name="theme-color" content="#0B1220">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Stylesheets are split by responsibility and loaded in cascade order. -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body id="top">
+
+  <!-- Decorative icon sprite: hidden from assistive technology. -->
+  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 4.5-9 4.5-9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.8 13 2.1 2.1 4.3-4.4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 20c.4-3.3 3-5.2 6-5.2s5.6 1.9 6 5.2"/><path d="M16 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M18 14.9c1.7.6 2.8 2.2 3 4.1"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4"/><path d="M4 20h16"/><path d="m8 15 3.5-4 3 2.5L19 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5 5.5 4h13L20 9.5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8.5 7-5 5 5 5"/><path d="m15.5 7 5 5-5 5"/><path d="m13.5 5-3 14"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 19c.3-2.2 1.2-3.3 2.6-3.6L8.4 17c-.3 1.4-1.4 2.3-3.4 2Z"/><path d="M9 15 6 12c1-3.2 3.6-6.4 8.5-7.5 1.5-.3 3.4-.5 4.5-.5-.1 1.1-.2 3-.5 4.5C17.4 13.4 14.2 16 11 17l-2-2Z"/><circle cx="14.5" cy="9.5" r="1.4"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><path d="M9 8h2M13 8h2M9 12h2M13 12h2"/><path d="M10 20.5v-4h4v4"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+
+      <a class="brand" href="#top">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect class="brand__bar brand__bar--1" x="6" y="18" width="5" height="8" rx="1.5"/>
+          <rect class="brand__bar brand__bar--2" x="13.5" y="12" width="5" height="14" rx="1.5"/>
+          <rect class="brand__bar brand__bar--3" x="21" y="6" width="5" height="20" rx="1.5"/>
+        </svg>
+        <span class="brand__name">ReadySignal</span>
+      </a>
+
+      <!-- Pure CSS mobile navigation (checkbox hack).
+           The checkbox stays in the accessibility tree and tab order; the
+           label is the visible hamburger button. -->
+      <input class="nav-toggle" type="checkbox" id="nav-toggle">
+      <label class="nav-toggle__label" for="nav-toggle">
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Menu</span>
+      </label>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="#features">Features</a></li>
+          <li><a class="site-nav__link" href="#product">Product preview</a></li>
+          <li><a class="site-nav__link" href="#how-it-works">How it works</a></li>
+          <li><a class="site-nav__link" href="#use-cases">Use cases</a></li>
+          <li><a class="site-nav__link" href="#pricing">Pricing</a></li>
+          <li><a class="site-nav__link" href="#faq">FAQ</a></li>
+        </ul>
+        <a class="button button--primary site-nav__cta" href="#product">See the preview</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+
+        <div class="hero__copy">
+          <p class="badge hero__badge anim-rise">A concept for teams without a security department</p>
+          <h1 id="hero-title" class="hero__title anim-rise">Know where your security stands, and what to fix first.</h1>
+          <p class="hero__lead anim-rise">ReadySignal is a proposed readiness workspace for small businesses. It would turn scattered security practices into one plain-language picture and a short, ordered list of improvements.</p>
+          <div class="cluster hero__actions anim-rise">
+            <a class="button button--primary" href="#product">Explore the product preview</a>
+            <a class="button button--secondary" href="#how-it-works">See how it would work</a>
+          </div>
+          <p class="hero__note anim-rise">Clearer Security. Smarter Decisions. This page is a design concept: it does not scan, monitor or certify anything.</p>
+        </div>
+
+        <!-- Decorative composition. The full, labelled dashboard is in #product. -->
+        <div class="hero__visual anim-fade" aria-hidden="true">
+          <div class="mini-dash">
+            <div class="mini-dash__top">
+              <span class="mini-dash__title">Readiness overview</span>
+              <span class="pill pill--muted">Sample data</span>
+            </div>
+            <div class="mini-dash__body">
+              <div class="ring" style="--ring-value: 68">
+                <div class="ring__inner">
+                  <span class="ring__value">68</span>
+                  <span class="ring__label">of 100</span>
+                </div>
+              </div>
+              <ul class="mini-dash__bars" role="list">
+                <li class="meter-row">
+                  <span class="meter-row__label">Access</span>
+                  <span class="meter"><span class="meter__fill" style="--value: 82"></span></span>
+                  <span class="meter-row__value">82%</span>
+                </li>
+                <li class="meter-row">
+                  <span class="meter-row__label">Backups</span>
+                  <span class="meter"><span class="meter__fill meter__fill--warn" style="--value: 64"></span></span>
+                  <span class="meter-row__value">64%</span>
+                </li>
+                <li class="meter-row">
+                  <span class="meter-row__label">Policies</span>
+                  <span class="meter"><span class="meter__fill meter__fill--danger" style="--value: 48"></span></span>
+                  <span class="meter-row__value">48%</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mini-dash__next">
+              <span class="mini-dash__next-label">Suggested next step</span>
+              <span class="mini-dash__next-text">Write a one-page incident contact list</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TRUST ================= -->
+    <section class="section section--alt" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="trust-title">Built around what small teams actually need</h2>
+          <p class="section__lead">These are the intended benefits of the product idea. They are design principles, not claims about existing customers or results.</p>
+        </div>
+
+        <ul class="card-grid trust-list" role="list">
+          <li class="trust-item">
+            <h3 class="trust-item__title">Plain language first</h3>
+            <p class="text-muted">Guidance written for owners and managers, not only for security specialists.</p>
+          </li>
+          <li class="trust-item">
+            <h3 class="trust-item__title">Prioritised, not overwhelming</h3>
+            <p class="text-muted">A short ordered list of next steps instead of an endless wall of findings.</p>
+          </li>
+          <li class="trust-item">
+            <h3 class="trust-item__title">Honest about its limits</h3>
+            <p class="text-muted">A readiness guide helps you organise work. It never replaces a professional assessment.</p>
+          </li>
+          <li class="trust-item">
+            <h3 class="trust-item__title">Evidence in one place</h3>
+            <p class="text-muted">Policies, checklists and notes kept together so progress is easy to explain.</p>
+          </li>
+        </ul>
+
+        <p class="callout">
+          <strong>What this page is not:</strong> there are no customer logos, testimonials, certifications or statistics here because none exist. Every number in the previews is illustrative sample data.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="features-title">Proposed capabilities</h2>
+          <p class="section__lead">Six conceptual features that would help a small team move from "we hope we are fine" to "we know our next three steps".</p>
+        </div>
+
+        <ul class="card-grid feature-grid" role="list">
+          <li class="feature-wrap">
+            <article class="feature">
+              <span class="feature__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span>
+              <div class="feature__body">
+                <h3>Security readiness overview</h3>
+                <p class="text-muted">One summary of how your current practices compare with a simple readiness checklist, grouped by area.</p>
+              </div>
+            </article>
+          </li>
+          <li class="feature-wrap">
+            <article class="feature">
+              <span class="feature__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-route"/></svg></span>
+              <div class="feature__body">
+                <h3>Prioritised improvement roadmap</h3>
+                <p class="text-muted">Recommended actions ordered by effort and impact so the most useful work comes first.</p>
+              </div>
+            </article>
+          </li>
+          <li class="feature-wrap">
+            <article class="feature">
+              <span class="feature__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg></span>
+              <div class="feature__body">
+                <h3>Risk and issue organisation</h3>
+                <p class="text-muted">Group open concerns by category, owner and urgency instead of tracking them in scattered notes.</p>
+              </div>
+            </article>
+          </li>
+          <li class="feature-wrap">
+            <article class="feature">
+              <span class="feature__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clipboard"/></svg></span>
+              <div class="feature__body">
+                <h3>Evidence and policy checklist</h3>
+                <p class="text-muted">Keep a record of which policies exist and what supports them, ready to share with a client or partner.</p>
+              </div>
+            </article>
+          </li>
+          <li class="feature-wrap">
+            <article class="feature">
+              <span class="feature__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span>
+              <div class="feature__body">
+                <h3>Team security awareness</h3>
+                <p class="text-muted">Short, practical reminders and a simple way to see who has completed which awareness activity.</p>
+              </div>
+            </article>
+          </li>
+          <li class="feature-wrap">
+            <article class="feature">
+              <span class="feature__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg></span>
+              <div class="feature__body">
+                <h3>Progress visibility</h3>
+                <p class="text-muted">See readiness change over time so improvement is visible to the whole team, not just one person.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= PRODUCT SHOWCASE ================= -->
+    <section class="section section--alt" id="product" aria-labelledby="product-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="product-title">A look at the proposed dashboard</h2>
+          <p class="section__lead">Built with HTML and CSS only. Every figure below is invented sample data to illustrate the layout.</p>
+        </div>
+
+        <figure class="dash" aria-labelledby="dash-caption">
+          <div class="dash__chrome">
+            <span class="dash__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="dash__chrome-title">ReadySignal workspace: Example Studio Ltd</span>
+            <span class="pill pill--muted">Illustrative sample data</span>
+          </div>
+
+          <div class="dash__grid">
+
+            <section class="panel panel--score" aria-labelledby="p-score">
+              <h3 id="p-score" class="panel__title">Readiness score</h3>
+              <div class="score">
+                <div class="ring ring--large" style="--ring-value: 68">
+                  <div class="ring__inner">
+                    <span class="ring__value">68</span>
+                    <span class="ring__label">out of 100</span>
+                  </div>
+                </div>
+                <p class="score__text">Fair. Five areas reviewed, two need attention before the next quarter.</p>
+              </div>
+            </section>
+
+            <section class="panel panel--areas" aria-labelledby="p-areas">
+              <h3 id="p-areas" class="panel__title">Risk categories</h3>
+              <ul class="areas" role="list">
+                <li class="area">
+                  <div class="area__head"><span class="area__name">Accounts and access</span><span class="area__status area__status--good">Strong 82%</span></div>
+                  <span class="meter" aria-hidden="true"><span class="meter__fill" style="--value: 82"></span></span>
+                </li>
+                <li class="area">
+                  <div class="area__head"><span class="area__name">Devices and updates</span><span class="area__status area__status--good">Strong 71%</span></div>
+                  <span class="meter" aria-hidden="true"><span class="meter__fill" style="--value: 71"></span></span>
+                </li>
+                <li class="area">
+                  <div class="area__head"><span class="area__name">Backups and recovery</span><span class="area__status area__status--warn">Fair 64%</span></div>
+                  <span class="meter" aria-hidden="true"><span class="meter__fill meter__fill--warn" style="--value: 64"></span></span>
+                </li>
+                <li class="area">
+                  <div class="area__head"><span class="area__name">Team awareness</span><span class="area__status area__status--warn">Fair 55%</span></div>
+                  <span class="meter" aria-hidden="true"><span class="meter__fill meter__fill--warn" style="--value: 55"></span></span>
+                </li>
+                <li class="area">
+                  <div class="area__head"><span class="area__name">Policies and evidence</span><span class="area__status area__status--bad">Needs work 48%</span></div>
+                  <span class="meter" aria-hidden="true"><span class="meter__fill meter__fill--danger" style="--value: 48"></span></span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="panel panel--checklist" aria-labelledby="p-check">
+              <h3 id="p-check" class="panel__title">Improvement checklist</h3>
+              <ul class="checklist" role="list">
+                <li class="check check--done"><span class="check__mark" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-check"/></svg></span><span class="check__text">Turn on multi-factor sign-in for admin accounts</span><span class="check__state">Done</span></li>
+                <li class="check check--doing"><span class="check__mark" aria-hidden="true"></span><span class="check__text">Test a restore from last month's backup</span><span class="check__state">In progress</span></li>
+                <li class="check"><span class="check__mark" aria-hidden="true"></span><span class="check__text">Review who currently has admin access</span><span class="check__state">To do</span></li>
+                <li class="check"><span class="check__mark" aria-hidden="true"></span><span class="check__text">Write a one-page incident contact list</span><span class="check__state">To do</span></li>
+              </ul>
+            </section>
+
+            <section class="panel panel--next" aria-labelledby="p-next">
+              <h3 id="p-next" class="panel__title">Recommended next actions</h3>
+              <ol class="actions" role="list">
+                <li class="action"><span class="pill pill--bad">High priority</span><span class="action__text">Write a one-page incident contact list</span></li>
+                <li class="action"><span class="pill pill--warn">Medium priority</span><span class="action__text">Schedule a short phishing-awareness session</span></li>
+                <li class="action"><span class="pill pill--info">Low priority</span><span class="action__text">Add a renewal reminder for key software licences</span></li>
+              </ol>
+            </section>
+
+            <section class="panel panel--progress" aria-labelledby="p-prog">
+              <h3 id="p-prog" class="panel__title">Progress over six weeks</h3>
+              <div class="trend" aria-hidden="true">
+                <span class="trend__bar" style="--value: 32"></span>
+                <span class="trend__bar" style="--value: 41"></span>
+                <span class="trend__bar" style="--value: 48"></span>
+                <span class="trend__bar" style="--value: 55"></span>
+                <span class="trend__bar" style="--value: 62"></span>
+                <span class="trend__bar trend__bar--now" style="--value: 68"></span>
+              </div>
+              <p class="trend__caption">Sample score rose from 32 in week 1 to 68 in week 6. 6 of 14 sample tasks are complete.</p>
+            </section>
+
+          </div>
+
+          <figcaption id="dash-caption" class="dash__caption">Illustrative interface preview. It is a static HTML and CSS mock-up with invented data. No real assessment is performed.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="how-title">How it would work</h2>
+          <p class="section__lead">A simple three-step concept. This static page demonstrates the idea; it does not perform these steps itself.</p>
+        </div>
+
+        <ol class="steps" role="list">
+          <li class="step">
+            <span class="step__number" aria-hidden="true">1</span>
+            <h3>Understand your current practices</h3>
+            <p class="text-muted">Answer a short, plain-language questionnaire about accounts, devices, backups and policies to describe where you are today.</p>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">2</span>
+            <h3>Identify and prioritise improvements</h3>
+            <p class="text-muted">Receive a short, ordered list of suggested actions, grouped by area and ranked by effort and likely benefit.</p>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">3</span>
+            <h3>Track progress toward readiness</h3>
+            <p class="text-muted">Mark work as done, attach supporting evidence and watch your readiness picture improve over time.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= USE CASES ================= -->
+    <section class="section section--alt" id="use-cases" aria-labelledby="cases-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="cases-title">Who it could help</h2>
+          <p class="section__lead">Four example situations where a lightweight readiness workspace could be useful.</p>
+        </div>
+
+        <ul class="card-grid card-grid--quad" role="list">
+          <li class="case-wrap">
+            <article class="case">
+              <span class="case__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"/></svg></span>
+              <h3>Small businesses</h3>
+              <p class="text-muted">An owner without an IT department could see which basic protections are in place and what to ask a provider to do.</p>
+            </article>
+          </li>
+          <li class="case-wrap">
+            <article class="case">
+              <span class="case__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-store"/></svg></span>
+              <h3>Online stores</h3>
+              <p class="text-muted">A shop could keep track of account security, backups and staff habits that protect customer trust.</p>
+            </article>
+          </li>
+          <li class="case-wrap">
+            <article class="case">
+              <span class="case__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+              <h3>Software agencies</h3>
+              <p class="text-muted">An agency could organise its own practices and show clients a clear record of the improvements it is making.</p>
+            </article>
+          </li>
+          <li class="case-wrap">
+            <article class="case">
+              <span class="case__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+              <h3>Startups</h3>
+              <p class="text-muted">A young team could build good habits early and have tidy answers ready when partners ask about security.</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <h2 id="pricing-title">Illustrative pricing</h2>
+          <p class="section__lead">Sample tiers to show how pricing could be presented. These are not live plans and nothing here can be purchased.</p>
+        </div>
+
+        <ul class="card-grid pricing-grid" role="list">
+          <li class="plan-wrap">
+            <article class="plan" aria-labelledby="plan-starter">
+              <h3 id="plan-starter" class="plan__name">Starter</h3>
+              <p class="plan__for text-muted">For very small teams getting organised.</p>
+              <p class="plan__price"><span class="plan__amount">$19</span><span class="plan__period"> / month, sample</span></p>
+              <ul class="plan__features" role="list">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Readiness overview</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Up to 5 team members</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Basic improvement checklist</li>
+              </ul>
+              <a class="button button--secondary plan__cta" href="#faq">Read the pricing FAQ</a>
+            </article>
+          </li>
+          <li class="plan-wrap">
+            <article class="plan plan--featured" aria-labelledby="plan-growth">
+              <p class="badge plan__badge">Most balanced sample tier</p>
+              <h3 id="plan-growth" class="plan__name">Growth</h3>
+              <p class="plan__for text-muted">For growing teams that need a shared roadmap.</p>
+              <p class="plan__price"><span class="plan__amount">$49</span><span class="plan__period"> / month, sample</span></p>
+              <ul class="plan__features" role="list">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Everything in Starter</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Up to 25 team members</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Prioritised roadmap and progress history</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Evidence and policy checklist</li>
+              </ul>
+              <a class="button button--primary plan__cta" href="#faq">Read the pricing FAQ</a>
+            </article>
+          </li>
+          <li class="plan-wrap">
+            <article class="plan" aria-labelledby="plan-business">
+              <h3 id="plan-business" class="plan__name">Business</h3>
+              <p class="plan__for text-muted">For organisations coordinating several groups.</p>
+              <p class="plan__price"><span class="plan__amount">$99</span><span class="plan__period"> / month, sample</span></p>
+              <ul class="plan__features" role="list">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Everything in Growth</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Up to 100 team members</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Awareness activity tracking</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Shareable summary reports</li>
+              </ul>
+              <a class="button button--secondary plan__cta" href="#faq">Read the pricing FAQ</a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section__header">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <p class="section__lead">Straight answers about what this concept is, and what it is not.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item" open>
+            <summary class="faq__question">Is ReadySignal a real product?</summary>
+            <p class="faq__answer">No. ReadySignal is a concept created as a frontend internship project. This page is a static HTML and CSS design that illustrates how the product could look and be explained.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Who is the concept designed for?</summary>
+            <p class="faq__answer">Small and medium-sized businesses, online stores, small software agencies and startups that do not have a dedicated security team.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How would onboarding work?</summary>
+            <p class="faq__answer">The idea is a short questionnaire about your current practices, followed by a first roadmap of suggested actions. This page does not collect any answers or personal data.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Would it scan or monitor my systems?</summary>
+            <p class="faq__answer">No. The concept is a readiness guide that helps you organise and track work. It would not perform vulnerability scanning, threat detection or live monitoring, and it would not guarantee that you are secure.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Does it provide compliance certification?</summary>
+            <p class="faq__answer">No. It could help you collect evidence and organise policies, but it would not certify compliance with any standard or replace an independent audit.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are the prices real?</summary>
+            <p class="faq__answer">No. The three tiers are sample prices used to demonstrate a pricing layout. There is no checkout, billing or sign-up on this page.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="section final-cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <h2 id="cta-title">Clearer security starts with a clearer picture.</h2>
+          <p class="section__lead">ReadySignal is a portfolio concept. If you would like to see how this page was built, the source code is available for review.</p>
+          <div class="cluster cta-panel__actions">
+            <a class="button button--primary" href="https://github.com/abdullahsatech-eng/appverse-frontend-internship" target="_blank" rel="noopener noreferrer">View the source on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a class="button button--secondary" href="#product">Revisit the dashboard preview</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="stack footer-brand">
+          <a class="brand" href="#top">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <rect class="brand__bar brand__bar--1" x="6" y="18" width="5" height="8" rx="1.5"/>
+              <rect class="brand__bar brand__bar--2" x="13.5" y="12" width="5" height="14" rx="1.5"/>
+              <rect class="brand__bar brand__bar--3" x="21" y="6" width="5" height="20" rx="1.5"/>
+            </svg>
+            <span class="brand__name">ReadySignal</span>
+          </a>
+          <p class="text-muted">A concept for helping small businesses understand their cybersecurity readiness. Clearer Security. Smarter Decisions.</p>
+        </div>
+
+        <nav aria-label="Footer">
+          <p class="footer-title">Explore</p>
+          <ul class="footer-list" role="list">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#product">Product preview</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#use-cases">Use cases</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <p class="footer-title">Project information</p>
+          <ul class="footer-list footer-list--plain" role="list">
+            <li>Contact: placeholder, no mailbox is monitored</li>
+            <li>Privacy policy: placeholder, not yet written</li>
+            <li>Terms of use: placeholder, not yet written</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Abdullah Khan. Created for the Appverse Technologies Frontend Developer Internship, Task 2.</p>
+        <p>Concept project. Not a real security service.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
