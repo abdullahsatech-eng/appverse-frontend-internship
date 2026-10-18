@@ -1,4 +1,5 @@
 # StockSense: Smart Inventory Analytics
+**Live Demo:** https://abdullahsatech-eng.github.io/appverse-frontend-internship/task-submissions/task-03-es6-product-data-analyzer/
 
 > **Know Your Stock. Understand Your Business.**
 
@@ -117,7 +118,7 @@ Quick manual check: open the app, search `mouse`, add a product with an empty fo
 5. Wait about a minute (check the **Actions** tab), then open `https://<your-username>.github.io/<repository>/` (add the subfolder path if you used one).
 6. **Verify:** the dashboard shows 23 active products and the "Sample data" badge; the browser console (F12) has no red errors; the Network tab shows CSS and JS files with status 200; add a product and refresh to confirm saving works.
 
-This build has **not been deployed** by the author of this package. A live URL exists only after you complete the steps above and open it.
+**Live Demo:** https://abdullahsatech-eng.github.io/appverse-frontend-internship/task-submissions/task-03-es6-product-data-analyzer/
 
 ## 11. Screenshots
 Genuine captures are in `screenshots/`. Files 06 to 20 are real browser screenshots of the running app (desktop, tablet and mobile). Files 01 to 05 are images rendered from real command output and real source lines (a directory listing and code excerpts), not editor screenshots.
