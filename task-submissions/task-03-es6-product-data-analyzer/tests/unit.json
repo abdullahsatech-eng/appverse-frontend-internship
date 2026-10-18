@@ -1,0 +1,211 @@
+{
+ "summary": {
+  "totalProducts": 23,
+  "inactiveProducts": 1,
+  "totalUnits": 605,
+  "inventoryCostValue": 367220,
+  "potentialRetailValue": 578250,
+  "estimatedGrossProfit": 211030,
+  "lowStockCount": 4,
+  "outOfStockCount": 3,
+  "needsRestock": true,
+  "allRecordsValid": true
+ },
+ "results": [
+  {
+   "name": "Dataset has at least 20 products",
+   "ok": true,
+   "detail": "24 products"
+  },
+  {
+   "name": "Unique IDs and SKUs",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Summary: active products",
+   "ok": true,
+   "detail": "23 vs 23"
+  },
+  {
+   "name": "Summary: total units",
+   "ok": true,
+   "detail": "605"
+  },
+  {
+   "name": "Summary: cost value",
+   "ok": true,
+   "detail": "367220"
+  },
+  {
+   "name": "Summary: retail value",
+   "ok": true,
+   "detail": "578250"
+  },
+  {
+   "name": "Summary: gross profit = retail - cost",
+   "ok": true,
+   "detail": "211030"
+  },
+  {
+   "name": "Summary: low-stock count",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "name": "Summary: out-of-stock count",
+   "ok": true,
+   "detail": "3"
+  },
+  {
+   "name": "Summary: allRecordsValid true for sample data",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Category totals add up to summary",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "find by id and by SKU (case-insensitive)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "find returns undefined when missing",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Search by name",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Search by SKU",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Search + category + stock combine",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Out of stock filter (all categories)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Sort does not mutate source array",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Sort by value desc puts A4 Paper first",
+   "ok": true,
+   "detail": "A4 Paper Ream 80gsm"
+  },
+  {
+   "name": "Sort by price asc puts cheapest first",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Valid product passes",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Empty name rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Duplicate SKU rejected (case-insensitive)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Duplicate ID rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Negative price rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "NaN price rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Selling below cost rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Fractional quantity rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Unknown category rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "every([]) is true (documented behaviour)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "allRecordsValid detects a bad record",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "needsRestock (some) true and false cases",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Spread update leaves original object unchanged",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Shallow copy caveat: nested objects are shared",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Empty list gives zero summary (no NaN)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Currency format uses PKR",
+   "ok": true,
+   "detail": "Rs 1,500"
+  },
+  {
+   "name": "CSV has header + 24 rows, quotes escaped",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "nextProductId continues sequence",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Inactive product excluded from low/out totals",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

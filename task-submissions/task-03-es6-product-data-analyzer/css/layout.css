@@ -1,0 +1,32 @@
+/* layout.css: app shell, sidebar, top bar, sections, grids (mobile-first) */
+.app { min-height: 100vh; }
+.main { min-width: 0; }
+
+.sidebar { position: fixed; inset: 0 auto 0 0; z-index: var(--z-sidebar); width: min(18rem, 85vw); display: flex; flex-direction: column; gap: var(--space-5);
+  padding: var(--space-5); background: var(--color-surface); border-right: 1px solid var(--color-border); overflow-y: auto;
+  transform: translateX(-100%); visibility: hidden; transition: transform var(--duration) ease, visibility 0s linear var(--duration); }
+.sidebar.is-open { transform: none; visibility: visible; transition-delay: 0s; box-shadow: var(--shadow-lg); }
+.backdrop { position: fixed; inset: 0; z-index: calc(var(--z-sidebar) - 1); background: rgb(3 8 18 / 0.6); }
+.sidebar__nav { display: grid; gap: var(--space-1); }
+.sidebar__note { margin-top: auto; color: var(--color-muted); font-size: var(--text-xs); }
+
+.topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--gutter);
+  background: rgb(11 18 32 / 0.92); border-bottom: 1px solid var(--color-border); }
+.topbar__title { flex: 1; min-width: 0; }
+.topbar__title p { color: var(--color-muted); font-size: var(--text-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.content { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); width: min(100%, 78rem); margin-inline: auto; padding: var(--space-5) var(--gutter) var(--space-7); }
+.section-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); justify-content: space-between; margin-bottom: var(--space-4); }
+.content > * { min-width: 0; }
+.kpi-grid { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); }
+.insight-grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+.footer { color: var(--color-muted); font-size: var(--text-xs); display: grid; gap: var(--space-1); padding-top: var(--space-4); border-top: 1px solid var(--color-border); }
+
+@media (min-width: 64rem) {
+  .sidebar { transform: none; visibility: visible; width: var(--sidebar-width); box-shadow: none; }
+  .main { margin-left: var(--sidebar-width); }
+  .menu-button, .backdrop { display: none !important; }
+  .insight-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  .panel--wide { grid-row: span 2; }
+}
+@media (min-width: 48rem) and (max-width: 63.99rem) { .insight-grid { grid-template-columns: 1fr 1fr; } .panel--wide { grid-column: 1 / -1; } }

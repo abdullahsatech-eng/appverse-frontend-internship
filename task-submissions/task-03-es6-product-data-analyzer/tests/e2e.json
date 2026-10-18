@@ -1,0 +1,727 @@
+[
+ {
+  "name": "Subpath hosting: all resources load (HTTP, no 4xx/5xx)",
+  "ok": true,
+  "detail": "9 responses, bad=[]"
+ },
+ {
+  "name": "Subpath hosting: no external requests",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Subpath hosting: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Opens directly from file:// with 24 rows",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "KPI: active products = 23",
+  "ok": true,
+  "detail": "23"
+ },
+ {
+  "name": "KPI: total units = 605",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "KPI: cost value = Rs 367,220",
+  "ok": true,
+  "detail": "Rs\u00a0367,220"
+ },
+ {
+  "name": "KPI: retail value = Rs 578,250",
+  "ok": true,
+  "detail": "Rs\u00a0578,250"
+ },
+ {
+  "name": "KPI: gross profit = Rs 211,030",
+  "ok": true,
+  "detail": "Rs\u00a0211,030"
+ },
+ {
+  "name": "KPI: low = 4, out = 3",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Badge says Sample data",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Category list shows 5 categories",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Restock alerts list 7 items",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Data quality says all records valid",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Search by name 'mouse' -> 1 row",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Search by SKU 'acc-00' -> 5 rows",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Category + status filters combine (Electronics + low = Bluetooth Speaker)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Electronics + out -> Power Bank",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "No match shows empty state",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Clear filters restores 24 rows",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Sort by inventory value descending -> A4 Paper first",
+  "ok": true,
+  "detail": "A4 Paper Ream 80gsm"
+ },
+ {
+  "name": "Sort by stock descending -> Gel Pen Pack first",
+  "ok": true,
+  "detail": "Gel Pen Pack (10)"
+ },
+ {
+  "name": "Sort direction button label updates",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Inactive filter -> 1 row (Wall Clock)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Add dialog opens with next ID PRD-025",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Empty form shows errors and summary",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Focus moves to first invalid field",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Duplicate SKU rejected",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Selling below cost rejected",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Fractional stock rejected",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Negative reorder level rejected",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Invalid fields flagged aria-invalid",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Valid product added (25 rows)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "KPI active products updates to 24",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "KPI low-stock rises to 5 (qty 4 <= reorder 6)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "KPI cost value rises by 12,000",
+  "ok": true,
+  "detail": "Rs\u00a0379,220"
+ },
+ {
+  "name": "Badge changes to Your data",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Restock list includes new product",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Edit dialog is prefilled",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Edit stock to 0 -> out-of-stock count 4",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Edit cannot reuse another product's SKU",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Edit keeping own SKU is allowed",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Delete asks for confirmation",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Cancel keeps product",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Confirm deletes product (24 rows)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Data persists after refresh (24 rows incl. Gaming Keyboard)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Edited stock persists (Wireless Mouse out of stock)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Badge still Your data after refresh",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "CSV export downloads filtered rows (Electronics: header + 7)",
+  "ok": true,
+  "detail": "8 lines; ID,SKU,Name,Category,Supplier,Cost price"
+ },
+ {
+  "name": "Reset asks for confirmation",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Cancelling reset keeps user data",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Confirmed reset restores 24 sample products",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Reset stored a backup of the previous data first",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "No console errors during full workflow",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Keyboard: Enter on Add opens dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Keyboard: Escape closes dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Focus returns to Add button after closing",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Skip link is first tab stop",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Visible focus outline on inputs",
+  "ok": true,
+  "detail": "solid 3px"
+ },
+ {
+  "name": "Storage blocked: app still renders 24 rows",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Storage blocked: notice is shown",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Storage blocked: add still works in memory",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Malformed saved data: falls back to sample data with notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Malformed saved data: raw value not silently overwritten",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Invalid record shape in storage: rejected with notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Reduced motion: smooth scrolling off",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Reduced motion: transition duration token is 0s",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Touch (375x812, tap events): add dialog, menu, backdrop close and delete confirm work",
+  "ok": true,
+  "detail": "[True, True, True, True, True]"
+ },
+ {
+  "name": "Small mobile 320x568: no horizontal overflow",
+  "ok": true,
+  "detail": "[320, 320]"
+ },
+ {
+  "name": "Small mobile: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Small mobile: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Small mobile: sidebar hidden until menu opened",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Small mobile: menu opens and Escape closes it",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Small mobile: table layout = stacked cards",
+  "ok": true,
+  "detail": "block"
+ },
+ {
+  "name": "Small mobile: add dialog fits viewport",
+  "ok": true,
+  "detail": "[19, 12, 301, 556]"
+ },
+ {
+  "name": "Small mobile: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Small mobile: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Small mobile: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Typical mobile 375x812: no horizontal overflow",
+  "ok": true,
+  "detail": "[375, 375]"
+ },
+ {
+  "name": "Typical mobile: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Typical mobile: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Typical mobile: sidebar hidden until menu opened",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Typical mobile: menu opens and Escape closes it",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Typical mobile: table layout = stacked cards",
+  "ok": true,
+  "detail": "block"
+ },
+ {
+  "name": "Typical mobile: add dialog fits viewport",
+  "ok": true,
+  "detail": "[19, 12, 356, 800]"
+ },
+ {
+  "name": "Typical mobile: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Typical mobile: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Typical mobile: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Large mobile 430x932: no horizontal overflow",
+  "ok": true,
+  "detail": "[430, 430]"
+ },
+ {
+  "name": "Large mobile: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Large mobile: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Large mobile: sidebar hidden until menu opened",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Large mobile: menu opens and Escape closes it",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Large mobile: table layout = stacked cards",
+  "ok": true,
+  "detail": "block"
+ },
+ {
+  "name": "Large mobile: add dialog fits viewport",
+  "ok": true,
+  "detail": "[19, 12, 411, 920]"
+ },
+ {
+  "name": "Large mobile: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Large mobile: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Large mobile: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Tablet 768x1024: no horizontal overflow",
+  "ok": true,
+  "detail": "[768, 768]"
+ },
+ {
+  "name": "Tablet: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Tablet: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Tablet: sidebar hidden until menu opened",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Tablet: menu opens and Escape closes it",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Tablet: table layout = table",
+  "ok": true,
+  "detail": "table-row"
+ },
+ {
+  "name": "Tablet: add dialog fits viewport",
+  "ok": true,
+  "detail": "[64, 184, 704, 840]"
+ },
+ {
+  "name": "Tablet: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Tablet: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Tablet: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Laptop 1366x768: no horizontal overflow",
+  "ok": true,
+  "detail": "[1366, 1366]"
+ },
+ {
+  "name": "Laptop: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Laptop: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Laptop: sidebar visible, menu button hidden",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Laptop: table layout = table",
+  "ok": true,
+  "detail": "table-row"
+ },
+ {
+  "name": "Laptop: add dialog fits viewport",
+  "ok": true,
+  "detail": "[363, 56, 1003, 712]"
+ },
+ {
+  "name": "Laptop: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Laptop: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Laptop: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Desktop 1920x1080: no horizontal overflow",
+  "ok": true,
+  "detail": "[1920, 1920]"
+ },
+ {
+  "name": "Desktop: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Desktop: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Desktop: sidebar visible, menu button hidden",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Desktop: table layout = table",
+  "ok": true,
+  "detail": "table-row"
+ },
+ {
+  "name": "Desktop: add dialog fits viewport",
+  "ok": true,
+  "detail": "[640, 212, 1280, 868]"
+ },
+ {
+  "name": "Desktop: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Desktop: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Desktop: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Landscape phone 812x375: no horizontal overflow",
+  "ok": true,
+  "detail": "[812, 812]"
+ },
+ {
+  "name": "Landscape phone: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Landscape phone: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Landscape phone: sidebar hidden until menu opened",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Landscape phone: menu opens and Escape closes it",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Landscape phone: table layout = table",
+  "ok": true,
+  "detail": "table-row"
+ },
+ {
+  "name": "Landscape phone: add dialog fits viewport",
+  "ok": true,
+  "detail": "[86, 12, 726, 363]"
+ },
+ {
+  "name": "Landscape phone: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Landscape phone: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Landscape phone: no console errors",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Landscape tablet 1024x768: no horizontal overflow",
+  "ok": true,
+  "detail": "[1024, 1024]"
+ },
+ {
+  "name": "Landscape tablet: no element clipped outside viewport",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Landscape tablet: touch targets >= 40px tall",
+  "ok": true,
+  "detail": "[]"
+ },
+ {
+  "name": "Landscape tablet: sidebar visible, menu button hidden",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Landscape tablet: table layout = table",
+  "ok": true,
+  "detail": "table-row"
+ },
+ {
+  "name": "Landscape tablet: add dialog fits viewport",
+  "ok": true,
+  "detail": "[192, 56, 832, 712]"
+ },
+ {
+  "name": "Landscape tablet: Save button reachable inside dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Landscape tablet: dialog stays usable with short viewport (keyboard-open simulation, height 300)",
+  "ok": true,
+  "detail": "{'fits': True, 'footVisible': True, 'scrolls': True}"
+ },
+ {
+  "name": "Landscape tablet: no console errors",
+  "ok": true,
+  "detail": "[]"
+ }
+]

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StockSense: Smart Inventory Analytics</title>
+  <meta name="description" content="StockSense is a responsive inventory analytics dashboard built with vanilla JavaScript ES6+ for the Appverse ES6 Product Data Analyzer assignment.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <a class="brand" href="#dashboard">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#34d399"/><path d="M8 22V12l8-4 8 4v10l-8 4-8-4Zm8-4 8-4M16 18v8M16 18l-8-4" fill="none" stroke="#06241a" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="brand__text"><strong>StockSense</strong><small>Smart Inventory Analytics</small></span>
+      </a>
+      <nav class="sidebar__nav" aria-label="Sections">
+        <a class="nav-link" href="#dashboard">Dashboard</a>
+        <a class="nav-link" href="#insights">Insights</a>
+        <a class="nav-link" href="#products">Products</a>
+      </nav>
+      <p class="sidebar__note">Sample data for the Appverse "ES6 Product Data Analyzer" assignment. All amounts are in PKR.</p>
+    </aside>
+    <div class="backdrop" id="backdrop" hidden></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menu-button" type="button" aria-controls="sidebar" aria-expanded="false">
+          <span class="visually-hidden">Open navigation menu</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="topbar__title">
+          <h1>StockSense</h1>
+          <p>Know Your Stock. Understand Your Business.</p>
+        </div>
+        <button class="button button--primary" id="add-button" type="button">Add product</button>
+      </header>
+
+      <main id="main" class="content">
+        <div class="notice" id="notice" role="status" hidden></div>
+
+        <section id="dashboard" aria-labelledby="dashboard-title">
+          <div class="section-head">
+            <h2 id="dashboard-title">Dashboard</h2>
+            <span class="badge" id="data-badge">Sample data</span>
+          </div>
+          <div class="kpi-grid" id="kpi-grid"></div>
+        </section>
+
+        <section id="insights" aria-labelledby="insights-title">
+          <div class="section-head"><h2 id="insights-title">Inventory insights</h2></div>
+          <div class="insight-grid">
+            <article class="panel panel--wide" aria-labelledby="cat-title">
+              <h3 id="cat-title">Category value (active products)</h3>
+              <p class="panel__hint">Bar length compares potential retail value across categories.</p>
+              <div id="category-list" class="category-list"></div>
+            </article>
+            <article class="panel" aria-labelledby="restock-title">
+              <h3 id="restock-title">Restock alerts</h3>
+              <div id="restock-list"></div>
+            </article>
+            <article class="panel" aria-labelledby="quality-title">
+              <h3 id="quality-title">Data quality</h3>
+              <div id="quality-box"></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="products" aria-labelledby="products-title">
+          <div class="section-head">
+            <h2 id="products-title">Products</h2>
+            <p class="result-count" id="result-count" aria-live="polite"></p>
+          </div>
+
+          <form class="toolbar" id="toolbar" role="search" aria-label="Search and filter products" novalidate>
+            <div class="field field--grow">
+              <label for="search">Search name or SKU</label>
+              <input id="search" type="search" placeholder="e.g. mouse or ELE-001" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="filter-category">Category</label>
+              <select id="filter-category"></select>
+            </div>
+            <div class="field">
+              <label for="filter-stock">Stock status</label>
+              <select id="filter-stock">
+                <option value="all">All statuses</option>
+                <option value="in">In stock</option>
+                <option value="low">Low stock</option>
+                <option value="out">Out of stock</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sort-key">Sort by</label>
+              <select id="sort-key">
+                <option value="name">Product name</option>
+                <option value="price">Selling price</option>
+                <option value="stock">Stock quantity</option>
+                <option value="value">Inventory value</option>
+              </select>
+            </div>
+            <div class="field field--button">
+              <button class="button button--ghost" id="sort-dir" type="button" aria-label="Sort direction: ascending. Activate to switch." data-dir="asc">Ascending</button>
+            </div>
+          </form>
+
+          <div class="actions-row">
+            <button class="button button--ghost" id="clear-filters" type="button">Clear filters</button>
+            <button class="button button--ghost" id="export-button" type="button">Export CSV</button>
+            <button class="button button--danger-ghost" id="reset-button" type="button">Reset to sample data</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" id="product-table">
+              <caption class="visually-hidden">Product inventory</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Category</th>
+                  <th scope="col" class="num">Cost</th>
+                  <th scope="col" class="num">Price</th>
+                  <th scope="col" class="num">Stock</th>
+                  <th scope="col" class="num">Value (cost)</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="product-body"></tbody>
+            </table>
+            <div class="empty" id="empty-state" hidden>
+              <p><strong>No products match your filters.</strong></p>
+              <p>Try a different search or clear the filters.</p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <p>StockSense | ES6 Product Data Analyzer | Abdullah Khan | OCT26-FE06-08 | Appverse Technologies</p>
+          <p>Values are inventory estimates, not realised revenue or profit. Sample data only.</p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <!-- Add / edit dialog -->
+  <dialog class="dialog" id="product-dialog" aria-labelledby="dialog-title">
+    <form id="product-form" method="dialog" novalidate>
+      <header class="dialog__head">
+        <h2 id="dialog-title">Add product</h2>
+        <button class="icon-button" type="button" id="dialog-close"><span class="visually-hidden">Close dialog</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </header>
+      <div class="dialog__body">
+        <p class="form-summary" id="form-summary" role="alert" hidden></p>
+        <div class="form-grid">
+          <div class="field"><label for="f-id">Product ID</label><input id="f-id" name="id" type="text" readonly aria-describedby="e-id"><p class="error" id="e-id"></p></div>
+          <div class="field"><label for="f-sku">SKU</label><input id="f-sku" name="sku" type="text" autocomplete="off" aria-describedby="e-sku" required><p class="error" id="e-sku"></p></div>
+          <div class="field field--full"><label for="f-name">Product name</label><input id="f-name" name="name" type="text" autocomplete="off" aria-describedby="e-name" required><p class="error" id="e-name"></p></div>
+          <div class="field"><label for="f-category">Category</label><select id="f-category" name="category" aria-describedby="e-category"></select><p class="error" id="e-category"></p></div>
+          <div class="field"><label for="f-supplier">Supplier</label><input id="f-supplier" name="supplier" type="text" autocomplete="off" aria-describedby="e-supplier" required><p class="error" id="e-supplier"></p></div>
+          <div class="field"><label for="f-cost">Cost price (PKR)</label><input id="f-cost" name="costPrice" type="number" inputmode="decimal" min="0" step="any" aria-describedby="e-costPrice" required><p class="error" id="e-costPrice"></p></div>
+          <div class="field"><label for="f-price">Selling price (PKR)</label><input id="f-price" name="sellingPrice" type="number" inputmode="decimal" min="0" step="any" aria-describedby="e-sellingPrice" required><p class="error" id="e-sellingPrice"></p></div>
+          <div class="field"><label for="f-stock">Stock quantity</label><input id="f-stock" name="stockQuantity" type="number" inputmode="numeric" min="0" step="1" aria-describedby="e-stockQuantity" required><p class="error" id="e-stockQuantity"></p></div>
+          <div class="field"><label for="f-reorder">Reorder level</label><input id="f-reorder" name="reorderLevel" type="number" inputmode="numeric" min="0" step="1" aria-describedby="e-reorderLevel" required><p class="error" id="e-reorderLevel"></p></div>
+          <div class="field"><label for="f-status">Status</label><select id="f-status" name="status" aria-describedby="e-status"><option value="active">Active</option><option value="inactive">Inactive</option></select><p class="error" id="e-status"></p></div>
+        </div>
+      </div>
+      <footer class="dialog__foot">
+        <button class="button button--ghost" type="button" id="dialog-cancel">Cancel</button>
+        <button class="button button--primary" type="submit" id="dialog-save">Save product</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Confirm dialog (delete / reset) -->
+  <dialog class="dialog dialog--small" id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-text">
+    <div class="dialog__head"><h2 id="confirm-title">Confirm</h2></div>
+    <div class="dialog__body"><p id="confirm-text"></p></div>
+    <div class="dialog__foot">
+      <button class="button button--ghost" type="button" id="confirm-cancel">Cancel</button>
+      <button class="button button--danger" type="button" id="confirm-ok">Confirm</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

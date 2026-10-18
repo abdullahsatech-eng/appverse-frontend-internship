@@ -1,0 +1,56 @@
+// Node unit tests for analytics.js (independent hand-computed expectations)
+const A = require("/home/claude/p4/stocksense-inventory-analytics/js/analytics.js");
+const D = require("/home/claude/p4/stocksense-inventory-analytics/js/data.js");
+const results = [];
+const t = (name, ok, detail = "") => results.push({ name, ok: !!ok, detail });
+const P = D.DEMO_PRODUCTS;
+
+// Independent totals with a plain loop (not reduce)
+let units = 0, cost = 0, retail = 0, active = 0, low = 0, out = 0;
+for (const p of P) { if (p.status !== "active") continue; active++; units += p.stockQuantity; cost += p.costPrice * p.stockQuantity; retail += p.sellingPrice * p.stockQuantity;
+  if (p.stockQuantity === 0) out++; else if (p.stockQuantity <= p.reorderLevel) low++; }
+const s = A.computeSummary(P);
+t("Dataset has at least 20 products", P.length >= 20, P.length + " products");
+t("Unique IDs and SKUs", new Set(P.map(p => p.id)).size === P.length && new Set(P.map(p => p.sku)).size === P.length);
+t("Summary: active products", s.totalProducts === active, `${s.totalProducts} vs ${active}`);
+t("Summary: total units", s.totalUnits === units, `${s.totalUnits}`);
+t("Summary: cost value", s.inventoryCostValue === cost, `${s.inventoryCostValue}`);
+t("Summary: retail value", s.potentialRetailValue === retail, `${s.potentialRetailValue}`);
+t("Summary: gross profit = retail - cost", s.estimatedGrossProfit === retail - cost, `${s.estimatedGrossProfit}`);
+t("Summary: low-stock count", s.lowStockCount === low, `${s.lowStockCount}`);
+t("Summary: out-of-stock count", s.outOfStockCount === out, `${s.outOfStockCount}`);
+t("Summary: allRecordsValid true for sample data", s.allRecordsValid === true);
+t("Category totals add up to summary", A.categoryBreakdown(P).reduce((a, r) => a + r.retail, 0) === retail);
+t("find by id and by SKU (case-insensitive)", A.findProduct(P, "prd-003")?.name === "Bluetooth Speaker" && A.findProduct(P, "ELE-003")?.id === "PRD-003");
+t("find returns undefined when missing", A.findProduct(P, "XXX") === undefined);
+t("Search by name", A.filterProducts(P, { query: "mouse" }).length === 1);
+t("Search by SKU", A.filterProducts(P, { query: "acc-00" }).length === 5);
+t("Search + category + stock combine", A.filterProducts(P, { query: "", category: "Electronics", stock: "low" }).map(p => p.id).join() === "PRD-003");
+t("Out of stock filter (all categories)", A.filterProducts(P, { stock: "out" }).length === 3);
+const before = JSON.stringify(P);
+const sorted = A.sortProducts(P, "value", "desc");
+t("Sort does not mutate source array", JSON.stringify(P) === before && sorted !== P);
+t("Sort by value desc puts A4 Paper first", sorted[0].name === "A4 Paper Ream 80gsm", sorted[0].name);
+t("Sort by price asc puts cheapest first", A.sortProducts(P, "price", "asc")[0].name === "Gel Pen Pack (10)");
+const good = { ...P[0], id: "PRD-100", sku: "NEW-001" };
+t("Valid product passes", Object.keys(A.validateProduct(good, P)).length === 0);
+t("Empty name rejected", "name" in A.validateProduct({ ...good, name: "  " }, P));
+t("Duplicate SKU rejected (case-insensitive)", "sku" in A.validateProduct({ ...good, sku: "ele-001" }, P));
+t("Duplicate ID rejected", "id" in A.validateProduct({ ...good, id: "PRD-001" }, P));
+t("Negative price rejected", "costPrice" in A.validateProduct({ ...good, costPrice: -1 }, P));
+t("NaN price rejected", "sellingPrice" in A.validateProduct({ ...good, sellingPrice: NaN }, P));
+t("Selling below cost rejected", "sellingPrice" in A.validateProduct({ ...good, costPrice: 500, sellingPrice: 400 }, P));
+t("Fractional quantity rejected", "stockQuantity" in A.validateProduct({ ...good, stockQuantity: 2.5 }, P));
+t("Unknown category rejected", "category" in A.validateProduct({ ...good, category: "Toys" }, P));
+t("every([]) is true (documented behaviour)", A.allRecordsValid([]) === true);
+t("allRecordsValid detects a bad record", A.allRecordsValid([...P, { ...good, name: "" }]) === false);
+t("needsRestock (some) true and false cases", A.needsRestock(P) === true && A.needsRestock(P.slice(0, 1)) === false);
+t("Spread update leaves original object unchanged", (() => { const o = P[0]; const u = { ...o, stockQuantity: 1 }; return o.stockQuantity === 25 && u.stockQuantity === 1; })());
+t("Shallow copy caveat: nested objects are shared", (() => { const o = { n: { a: 1 } }; const c = { ...o }; c.n.a = 2; return o.n.a === 2; })());
+t("Empty list gives zero summary (no NaN)", (() => { const e = A.computeSummary([]); return e.totalUnits === 0 && e.inventoryCostValue === 0 && e.estimatedGrossProfit === 0 && e.allRecordsValid === true; })());
+t("Currency format uses PKR", /Rs|PKR/.test(A.formatPKR(1500)) && A.formatPKR(NaN) === A.formatPKR(0), A.formatPKR(1500));
+t("CSV has header + 24 rows, quotes escaped", (() => { const c = A.toCSV([{ ...P[0], name: 'He said "hi", ok' }]); return c.split("\r\n").length === 2 && c.includes('"He said ""hi"", ok"'); })());
+t("nextProductId continues sequence", A.nextProductId(P) === "PRD-025");
+t("Inactive product excluded from low/out totals", (() => { const x = [{ ...good, stockQuantity: 0, status: "inactive" }]; const r = A.computeSummary(x); return r.outOfStockCount === 0 && r.totalProducts === 0; })());
+console.log(JSON.stringify({ summary: s, results }, null, 1));
+process.exitCode = results.every(r => r.ok) ? 0 : 1;

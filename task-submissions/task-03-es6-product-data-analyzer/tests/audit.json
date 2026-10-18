@@ -1,0 +1,77 @@
+{
+ "contrast": {
+  "text on bg": 16.32,
+  "muted on surface": 8.0,
+  "muted on bg": 8.77,
+  "accent on surface": 8.89,
+  "on-accent on accent": 8.57,
+  "warning on surface": 10.23,
+  "danger on surface": 6.18,
+  "danger on bg": 6.77,
+  "white on danger button": 3.76,
+  "muted on raised (table head)": 7.02
+ },
+ "requests": 9,
+ "bytes": 60666,
+ "files": [
+  [
+   "index.html",
+   11294
+  ],
+  [
+   "tokens.css",
+   1442
+  ],
+  [
+   "base.css",
+   1318
+  ],
+  [
+   "layout.css",
+   2570
+  ],
+  [
+   "components.css",
+   10366
+  ],
+  [
+   "analytics.js",
+   9785
+  ],
+  [
+   "data.js",
+   5960
+  ],
+  [
+   "storage.js",
+   2619
+  ],
+  [
+   "app.js",
+   15312
+  ]
+ ],
+ "timing_ms": {
+  "domContentLoaded": 74,
+  "load": 89
+ },
+ "fcp_ms": 96,
+ "a11y": {
+  "duplicateIds": [],
+  "unlabeledControls": [],
+  "unnamedButtonsLinks": [],
+  "headingOrder": "122333222",
+  "imgsNoAlt": 0,
+  "lang": "en",
+  "landmarks": "header:2 nav:1 main:1 aside:1 footer:2",
+  "h1count": 1,
+  "viewport": true,
+  "scripts": [
+   "js/data.js (defer)",
+   "js/analytics.js (defer)",
+   "js/storage.js (defer)",
+   "js/app.js (defer)"
+  ],
+  "externalRefs": []
+ }
+}
